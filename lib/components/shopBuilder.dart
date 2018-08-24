@@ -4,12 +4,14 @@ class ShopBuilder extends StatefulWidget {
   final List<Widget> children;
   final int column;
   final double height;
+  final IndexedWidgetBuilder itemBuilder;
 
   const ShopBuilder({
     Key key,
     this.children,
     this.column,
     this.height,
+    this.itemBuilder,
   }) : super(key: key);
 
   @override

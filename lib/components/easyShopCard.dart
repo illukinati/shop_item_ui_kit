@@ -2,13 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:shop_item_ui_kit/components/starRating.dart';
 
 class EasyShopCard extends StatelessWidget {
-  final String image;
+  final ImageProvider image;
   final String itemName;
   final String price;
   final String prePrice;
-  final double rating;
   final String badge;
+  final String button;
   final Alignment badgeAlignment;
+  final double rating;
+  final double height;
+  final double imageHeight;
 
   final Color badgeColor;
   final Color badgeBgColor;
@@ -16,30 +19,37 @@ class EasyShopCard extends StatelessWidget {
   final Color priceColor;
   final Color prePriceColor;
   final Color ratingColor;
+  final Color backgroundColor;
 
-  const EasyShopCard({
-    Key key,
-    this.itemName,
-    this.image,
-    this.prePrice,
-    this.price,
-    this.rating,
-    this.badge,
-    this.badgeAlignment,
-    this.badgeColor,
-    this.badgeBgColor,
-    this.itemNameColor,
-    this.prePriceColor,
-    this.priceColor,
-    this.ratingColor
-  }) : super(key: key);
+  const EasyShopCard(
+      {Key key,
+      this.itemName,
+      this.image,
+      this.prePrice,
+      this.price,
+      this.rating,
+      this.badge,
+      this.badgeAlignment,
+      this.badgeColor,
+      this.badgeBgColor,
+      this.itemNameColor,
+      this.prePriceColor,
+      this.priceColor,
+      this.backgroundColor,
+      this.button,
+      this.height,
+      this.imageHeight,
+      this.ratingColor})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color:
+          (this.backgroundColor != null) ? this.backgroundColor : Colors.white,
       child: Container(
         alignment: Alignment.topCenter,
-        height: 300.0,
+        height: this.height - ((this.button != null) ? 0.0 : 30.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -52,9 +62,9 @@ class EasyShopCard extends StatelessWidget {
                 children: <Widget>[
                   Image(
                     width: MediaQuery.of(context).size.width * 0.5,
-                    height: 200.0,
+                    height: this.imageHeight,
                     fit: BoxFit.fill,
-                    image: NetworkImage(this.image),
+                    image: this.image,
                   ),
                   (this.badge != null)
                       ? Container(
@@ -82,7 +92,10 @@ class EasyShopCard extends StatelessWidget {
               margin: const EdgeInsets.fromLTRB(10.0, 15.0, 0.0, 0.0),
               child: Text(
                 this.itemName,
-                style: TextStyle(color: Colors.grey[800]),
+                style: TextStyle(
+                    color: (this.itemNameColor != null)
+                        ? this.itemNameColor
+                        : Colors.grey[800]),
               ),
             ),
             Container(
@@ -93,14 +106,19 @@ class EasyShopCard extends StatelessWidget {
                     TextSpan(
                       text: this.prePrice,
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: (this.prePriceColor != null)
+                            ? this.prePriceColor
+                            : Colors.grey,
                         decoration: TextDecoration.lineThrough,
                       ),
                     ),
                     TextSpan(
                       text: " " + this.price,
                       style: TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.bold),
+                          color: (this.priceColor != null)
+                              ? this.priceColor
+                              : Colors.red,
+                          fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -110,10 +128,21 @@ class EasyShopCard extends StatelessWidget {
               margin: const EdgeInsets.only(left: 10.0),
               child: StarRating(
                 rating: this.rating,
-                color: Colors.orange[400],
+                color: (this.ratingColor != null)
+                    ? this.ratingColor
+                    : Colors.orange[400],
                 onRatingChanged: (rating) {},
               ),
             ),
+            (this.button != null)
+                ? Container(
+                    height: 30.0,
+                    child: FlatButton(
+                      onPressed: () {},
+                      child: Text(this.button),
+                    ),
+                  )
+                : Container(),
           ],
         ),
       ),
