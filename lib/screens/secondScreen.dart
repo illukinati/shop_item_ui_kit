@@ -54,7 +54,11 @@ class _SecondScreenState extends State<SecondScreen> {
           height: 330.0,
           imageHeight: 200.0,
           button: 'Buy',
-          onTap: printing,          
+          buttonColor: Colors.orange,
+          buttonTextColor: Colors.white,
+          btnOnPressed: printing,
+          onTap: printing,     
+          favorited: false,
         ),
       );
     });

@@ -25,31 +25,35 @@ class EasyShopCard extends StatelessWidget {
   final Color prePriceColor;
   final Color ratingColor;
   final Color backgroundColor;
+  final Color buttonColor;
+  final Color buttonTextColor;
 
-  const EasyShopCard(
-      {Key key,
-      this.itemName,
-      this.image,
-      this.prePrice,
-      this.price,
-      this.rating,
-      this.badge,
-      this.badgeAlignment,
-      this.badgeColor,
-      this.badgeBgColor,
-      this.itemNameColor,
-      this.prePriceColor,
-      this.priceColor,
-      this.backgroundColor,
-      this.button,
-      this.height,
-      this.imageHeight,
-      this.onTap,
-      this.btnOnPressed,
-      this.favoriteOnTap,
-      this.favorited,
-      this.ratingColor})
-      : super(key: key);
+  const EasyShopCard({
+    Key key,
+    this.itemName,
+    this.image,
+    this.prePrice,
+    this.price,
+    this.rating,
+    this.badge,
+    this.badgeAlignment,
+    this.badgeColor,
+    this.badgeBgColor,
+    this.itemNameColor,
+    this.prePriceColor,
+    this.priceColor,
+    this.backgroundColor,
+    this.button,
+    this.height,
+    this.imageHeight,
+    this.onTap,
+    this.btnOnPressed,
+    this.favoriteOnTap,
+    this.favorited,
+    this.ratingColor,
+    this.buttonColor,
+    this.buttonTextColor,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +65,7 @@ class EasyShopCard extends StatelessWidget {
             : Colors.white,
         child: Container(
           alignment: Alignment.topCenter,
-          height: this.height - ((this.button != null) ? 0.0 : 30.0),
+          height: this.height,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
@@ -155,11 +159,14 @@ class EasyShopCard extends StatelessWidget {
                           Expanded(
                             flex: 1,
                             child: FlatButton(
-                              color: Colors.orange,
+                              color: this.buttonColor,
                               onPressed: this.btnOnPressed,
                               child: Text(
                                 this.button,
-                                style: TextStyle(color: Colors.white),
+                                style: TextStyle(
+                                    color: (this.buttonTextColor != null)
+                                        ? this.buttonTextColor
+                                        : Colors.black),
                               ),
                             ),
                           ),
@@ -171,9 +178,9 @@ class EasyShopCard extends StatelessWidget {
                                     width: 30.0,
                                     alignment: Alignment.center,
                                     margin: const EdgeInsets.only(left: 5.0),
-                                    child: Icon((this.favorited != false)
-                                        ? Icons.favorite_border
-                                        : Icons.favorite),
+                                    child: Icon((this.favorited)
+                                        ? Icons.favorite
+                                        : Icons.favorite_border),
                                   ),
                                 )
                               : Container(),

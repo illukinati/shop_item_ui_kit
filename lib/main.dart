@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: new SecondScreen(),
+      home: new MainScreen(),
       theme: new ThemeData(
           primarySwatch: Colors.green,
           accentColor: Colors.green[700],
