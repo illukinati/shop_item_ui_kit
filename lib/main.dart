@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:shop_item_ui_kit/screens/mainScreen.dart';
-import 'package:shop_item_ui_kit/screens/secondScreen.dart';
 
 void main() {
   runApp(new MyApp());

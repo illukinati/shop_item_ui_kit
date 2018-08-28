@@ -31,7 +31,7 @@ class EasyShopCard extends StatelessWidget {
   const EasyShopCard({
     Key key,
     this.itemName,
-    this.image,
+    @required this.image,
     this.prePrice,
     this.price,
     this.rating,
@@ -44,7 +44,7 @@ class EasyShopCard extends StatelessWidget {
     this.priceColor,
     this.backgroundColor,
     this.button,
-    this.height,
+    @required this.height,
     this.imageHeight,
     this.onTap,
     this.btnOnPressed,

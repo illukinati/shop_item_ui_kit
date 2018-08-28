@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_item_ui_kit/components/circleShopCard.dart';
 import 'package:shop_item_ui_kit/components/easyShopCard.dart';
 import 'package:shop_item_ui_kit/components/shadowShopCard.dart';
 import 'package:shop_item_ui_kit/components/shopBuilder.dart';
@@ -45,7 +46,30 @@ class _MainScreenState extends State<MainScreen> {
               height: 300.0,
               imageHeight: 200.0,
             ),
-            new ShadowShopCard(),
+            new ShadowShopCard(
+              onTap: (){},
+              image: NetworkImage("https://i2-prod.mirror.co.uk/incoming/article11479196.ece/ALTERNATES/s615/KitKat-trademark-court-case.jpg"),
+              height: 330.0,
+              itemName: 'Kitkat Original',
+              prePrice: '¥ 150',
+              price: '¥ 120',
+              badge: '-15%',
+              badgeBgColor: Colors.orange,   
+              rating: 3.0,           
+            ),
+            new CircleShopCard(
+              onTap: (){},
+              itemName: 'Kitkat WhatsupBee',
+              badge: '-10%',
+              badgeBgColor: Colors.green,
+              prePrice: '¥ 120',
+              price: '¥ 100',
+              rating: 2.0,
+              fontSize: 18.0,
+              ratingColor: Colors.green[500],
+              height: 330.0,
+              image: NetworkImage("https://cdn.thisiswhyimbroke.com/images/wasabi-kit-kat1-640x533.jpg"),
+            ),
           ],
         ),
       ),

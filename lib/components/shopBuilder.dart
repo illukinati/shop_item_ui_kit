@@ -8,9 +8,9 @@ class ShopBuilder extends StatefulWidget {
 
   const ShopBuilder({
     Key key,
-    this.children,
+    @required this.children,
     this.column,
-    this.height,
+    @required this.height,
     this.itemBuilder,
   }) : super(key: key);
 
