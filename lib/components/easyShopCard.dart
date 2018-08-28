@@ -27,6 +27,7 @@ class EasyShopCard extends StatelessWidget {
   final Color backgroundColor;
   final Color buttonColor;
   final Color buttonTextColor;
+  final Color favoritedColor;
 
   const EasyShopCard({
     Key key,
@@ -53,6 +54,7 @@ class EasyShopCard extends StatelessWidget {
     this.ratingColor,
     this.buttonColor,
     this.buttonTextColor,
+    this.favoritedColor,
   }) : super(key: key);
 
   @override
@@ -178,9 +180,14 @@ class EasyShopCard extends StatelessWidget {
                                     width: 30.0,
                                     alignment: Alignment.center,
                                     margin: const EdgeInsets.only(left: 5.0),
-                                    child: Icon((this.favorited)
-                                        ? Icons.favorite
-                                        : Icons.favorite_border),
+                                    child: Icon(
+                                      (this.favorited)
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: (this.favoritedColor != null)
+                                          ? this.favoritedColor
+                                          : Colors.black,
+                                    ),
                                   ),
                                 )
                               : Container(),
