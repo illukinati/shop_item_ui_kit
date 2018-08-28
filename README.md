@@ -16,8 +16,7 @@ body: SingleChildScrollView(
   column: 2,
   children: <Widget>[
   new EasyShopCard(
-    image: NetworkImage(
-    'https://store.storeimages.cdn-apple.com/4981/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-silver-select-2017?wid=305&hei=358&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1515602510472'),
+    image: NetworkImage(''),
     itemName: 'iPhone X 256Gb',
     prePrice: '¥ 140,000',
     price: '¥ 129,000',
@@ -87,6 +86,8 @@ ShopBuilder(
 ),
 ```
 ez right ? calm your tweets.
+or you can see in full code here
+[a link](https://github.com/illukinati/shop_item_ui_kit/blob/master/lib/screens/secondScreen.dart)
 
 ### Easy Shop Card
 _Example #1_
@@ -94,8 +95,7 @@ _Example #1_
 ![](./ss/ss2.png)
 ```
 new EasyShopCard(
-  image: NetworkImage(
-  'https://store.storeimages.cdn-apple.com/4981/as-images.apple.com/is/image/AppleInc/aos/published/images/i/ph/iphone/x/iphone-x-silver-select-2017?wid=305&hei=358&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1515602510472'),
+  image: NetworkImage(''),
   itemName: 'iPhone X 256Gb',
   prePrice: '¥ 140,000',
   price: '¥ 129,000',
@@ -167,8 +167,7 @@ _Example #4_
 ![](./ss/ss3.png)
 ```
 new EasyShopCard(
-  image: NetworkImage(
-  'https://cdn.alzashop.com/ImgW.ashx?fd=f3&cd=SAMO0157a'),
+  image: NetworkImage(''),
   itemName: 'Samsung Galaxy S9',
   itemNameColor: Colors.white,
   price: '¥ 180,000',
@@ -196,6 +195,7 @@ new ShadowShopCard(
   price: '¥ 120',
   badge: '-15%',
   badgeBgColor: Colors.orange,   
+  blurColor: Colors.black,
   rating: 3.0,           
 ),
 ```
@@ -217,7 +217,7 @@ new CircleShopCard(
  fontSize: 18.0,
  ratingColor: Colors.green[500],
  height: 330.0,
- image: NetworkImage("https://cdn.thisiswhyimbroke.com/images/wasabi-kit-kat1-640x533.jpg"),
+ image: NetworkImage(""),
 ),
 ```
 Circle shop card only have white card, because actually it's kind of tricky with the image. haha
